@@ -15,6 +15,9 @@ const appRoutes: Routes = [
   },
   { path: 'onPushChangeDetectionObservables',
     loadChildren:'app/on-push-change-detection-observables/on-push-change-detection-observables.module#OnPushObServableChangeDetectionModule'
+  },
+  { path: 'manualChangeDetection',
+    loadChildren:'app/manual-change-detection/manual-change-detection.module#ManualChangeDetectionModule'
   }
 ];
 

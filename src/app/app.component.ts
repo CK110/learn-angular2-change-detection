@@ -3,6 +3,7 @@ import {DefaultChangeDetectionComponent} from "./default-change-detection/defaul
 import {Subject} from "rxjs";
 import {OnPushChangeDetectionComponent} from "./on-push-change-detection/on-push-change-detection.component";
 import {OnPushChangeDetectionObservablesComponent} from "./on-push-change-detection-observables/on-push-change-detection-observables.component";
+import {ManualChangeDetectionComponent} from "./manual-change-detection/manual-change-detection.component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ export class AppComponent {
   @ViewChild(DefaultChangeDetectionComponent) defaultChangeDetectionCmp: DefaultChangeDetectionComponent;
   @ViewChild(OnPushChangeDetectionComponent) onPushChangeDetectionCmp: OnPushChangeDetectionComponent;
   @ViewChild(OnPushChangeDetectionObservablesComponent) onPushChangeDetectionObservablesCmp: OnPushChangeDetectionObservablesComponent;
-  // @ViewChild(ManualChangeDetectionComponent) manualChangeDetectionCmp: ManualChangeDetectionComponent;
+  @ViewChild(ManualChangeDetectionComponent) manualChangeDetectionCmp: ManualChangeDetectionComponent;
   notifier: Subject<any> = new Subject();
 
   ngAfterViewChecked() {
@@ -30,9 +31,9 @@ export class AppComponent {
     if (this.onPushChangeDetectionObservablesCmp) {
       this.onPushChangeDetectionObservablesCmp.notifier = this.notifier;
     }
-    //
-    // if (this.manualChangeDetectionCmp) {
-    //   this.manualChangeDetectionCmp.notifier = this.notifier;
-    // }
+
+    if (this.manualChangeDetectionCmp) {
+      this.manualChangeDetectionCmp.notifier = this.notifier;
+    }
   }
 }
