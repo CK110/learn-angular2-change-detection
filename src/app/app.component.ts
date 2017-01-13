@@ -1,6 +1,7 @@
 import {Component, ViewChild, ViewEncapsulation} from '@angular/core';
 import {DefaultChangeDetectionComponent} from "./default-change-detection/default-change-detection.component";
 import {Subject} from "rxjs";
+import {OnPushChangeDetectionComponent} from "./on-push-change-detection/on-push-change-detection.component";
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import {Subject} from "rxjs";
 export class AppComponent {
 
   @ViewChild(DefaultChangeDetectionComponent) defaultChangeDetectionCmp: DefaultChangeDetectionComponent;
-  // @ViewChild(OnPushChangeDetectionComponent) onPushChangeDetectionCmp: OnPushChangeDetectionComponent;
+  @ViewChild(OnPushChangeDetectionComponent) onPushChangeDetectionCmp: OnPushChangeDetectionComponent;
   // @ViewChild(OnPushChangeDetectionObservablesComponent) onPushChangeDetectionObservablesCmp: OnPushChangeDetectionObservablesComponent;
   // @ViewChild(ManualChangeDetectionComponent) manualChangeDetectionCmp: ManualChangeDetectionComponent;
   notifier: Subject<any> = new Subject();
@@ -21,9 +22,9 @@ export class AppComponent {
       this.defaultChangeDetectionCmp.notifier = this.notifier;
     }
 
-    // if (this.onPushChangeDetectionCmp) {
-    //   this.onPushChangeDetectionCmp.notifier = this.notifier;
-    // }
+    if (this.onPushChangeDetectionCmp) {
+      this.onPushChangeDetectionCmp.notifier = this.notifier;
+    }
     //
     // if (this.onPushChangeDetectionObservablesCmp) {
     //   this.onPushChangeDetectionObservablesCmp.notifier = this.notifier;
