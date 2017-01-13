@@ -9,7 +9,6 @@ import {ComponentSix} from "./component-six/component-six.component";
 import {ComponentSeven} from "./component-seven/component-seven.component";
 import {RouterModule, Routes} from "@angular/router";
 import {ToggleStateService} from "../toggle-state.service";
-import {OnPushChangeDetectionComponent} from "./on-push-change-detection.component";
 import {ComponentTen} from "./component-ten/component-ten.component";
 import {ComponentEight} from "./component-eight/component-eight.component";
 import {ComponentNine} from "./component-nine/component-nine.component";
@@ -20,21 +19,22 @@ import {ComponentFiveteen} from "./component-fiveteen/component-fiveteen.compone
 import {ComponentSeventeen} from "./component-seventeen/component-seventeen.component";
 import {ComponentSixteen} from "./component-sixteen/component-sixteen.component";
 import {ComponentFourteen} from "./component-fourteen/component-fourteen.component";
+import {OnPushChangeDetectionObservablesComponent} from "./on-push-change-detection-observables.component";
 
-const opcdRoutes: Routes = [
-  { path: '', component:OnPushChangeDetectionComponent},
+const opacdRoutes: Routes = [
+  { path: '', component:OnPushChangeDetectionObservablesComponent},
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(opcdRoutes)
+    RouterModule.forChild(opacdRoutes)
   ],
   exports: [
-    OnPushChangeDetectionComponent,
+    OnPushChangeDetectionObservablesComponent,
   ],
   declarations: [
-    OnPushChangeDetectionComponent,
+    OnPushChangeDetectionObservablesComponent,
     ComponentOne,
     ComponentTwo,
     ComponentThree,
@@ -55,4 +55,4 @@ const opcdRoutes: Routes = [
   ],
   providers:[ToggleStateService]
 })
-export class OnPushChangeDetectionModule { }
+export class OnPushObServableChangeDetectionModule { }

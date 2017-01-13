@@ -13,6 +13,9 @@ const appRoutes: Routes = [
   { path: 'onPushChangeDetection',
     loadChildren:'app/on-push-change-detection/on-push-change-detection.module#OnPushChangeDetectionModule'
   },
+  { path: 'onPushChangeDetectionObservables',
+    loadChildren:'app/on-push-change-detection-observables/on-push-change-detection-observables.module#OnPushObServableChangeDetectionModule'
+  }
 ];
 
 @NgModule({
