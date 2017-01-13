@@ -20,6 +20,8 @@ export class AppComponent {
   notifier: Subject<any> = new Subject();
 
   ngAfterViewChecked() {
+    console.log(this.notifier);
+
     if (this.defaultChangeDetectionCmp) {
       this.defaultChangeDetectionCmp.notifier = this.notifier;
     }

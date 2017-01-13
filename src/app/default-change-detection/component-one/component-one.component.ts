@@ -17,6 +17,7 @@ export class ComponentOne {
   constructor(private zone: NgZone, private el: ElementRef) {}
 
   ngAfterViewChecked() {
+    debugger;
     toggleClass(this.el, this.zone);
   }
 }

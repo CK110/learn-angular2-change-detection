@@ -18,6 +18,7 @@ export class DefaultChangeDetectionComponent {
   constructor(private toggleStateService: ToggleStateService) {}
 
   notifyInterval(runInterval) {
+    debugger;
     this.toggleStateService.runInterval = runInterval;
     this.notifier.next(runInterval)
   }
